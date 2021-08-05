@@ -21,8 +21,7 @@ function App() {
     return (
       a[sortBy].toLowerCase() < b[sortBy].toLowerCase() ? -1 * order : 1 * order
     );
-  }
-  )
+  });
 
   // here we use useCallback() to retrieve data
   // and monitor any changes that happen to the data
@@ -47,7 +46,12 @@ function App() {
         <BiCalendar className="inline-block text-red-400 align-top" />Your Appointment
       </h1>
       <AddAppointment />
-      <Search query={query} onQueryChange={userQuery => setQuery(userQuery)} />
+      <Search query={query}
+        onQueryChange={userQuery => setQuery(userQuery)}
+        sortBy={sortBy}
+        onSortByChange={userSort => setSortBy(userSort)}
+        orderBy={orderBy}
+        onOrderByChange={userOrder => setOrderBy(userOrder)} />
 
       <ul className="divide-y divide-gray-200">
         {filteredAppointment
