@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import { BiSearch, BiCaretDown, BiCheck } from 'react-icons/bi';
 
 const Dropdown = ({ toggle, sortBy, onSortByChange, orderBy, onOrderByChange }) => {
@@ -65,6 +66,15 @@ const Search = ({ query, onQueryChange, sortBy, onSortByChange, orderBy, onOrder
       </div>
     </div>
   )
+}
+
+Search.propTypes = {
+  query: PropTypes.string,
+  onQueryChange: PropTypes.func,
+  sortBy: PropTypes.string,
+  onSortByChange: PropTypes.func,
+  orderBy: PropTypes.string,
+  onOrderByChange: PropTypes.func
 }
 
 export default Search;

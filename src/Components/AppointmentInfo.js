@@ -1,4 +1,5 @@
-import { BiTrash } from 'react-icons/bi'
+import PropTypes from 'prop-types';
+import { BiTrash } from 'react-icons/bi';
 
 const AppointmentInfo = ({ appointment, onDeleteAppointment }) => {
   return (
@@ -17,6 +18,11 @@ const AppointmentInfo = ({ appointment, onDeleteAppointment }) => {
       </div>
     </li>
   )
+}
+
+AppointmentInfo.propTypes = {
+  appointment: PropTypes.object,
+  onDeleteAppointment: PropTypes.func
 }
 
 export default AppointmentInfo;

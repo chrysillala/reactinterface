@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { BiCalendarPlus } from 'react-icons/bi';
 import { useState } from 'react';
 
@@ -107,6 +108,11 @@ const AddAppointment = ({ lastId, onSendAppointment }) => {
       }
     </div>
   )
+}
+
+AddAppointment.propTypes = {
+  lastId: PropTypes.number,
+  onSendAppointment: PropTypes.func
 }
 
 export default AddAppointment;
