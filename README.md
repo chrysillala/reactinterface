@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+## Lessons Learned
+
+1. Craco: to configure tailwind inside CRA. https://tailwindcss.com/docs/guides/create-react-app
+1. In the AppointmentInfo component's delete button, we want to communicate with the parent component that handles all the data. So here, when the button is clicked, we will trigger `onDeleteAppointment` and send our `appointment.id` to parent component that will process the `appointment.id` it received and do filtering in this case. This is called [lifting state up](https://reactjs.org/docs/lifting-state-up.html).
+1. sort: if it returns 1 means sort by ascending order, if -1 descending
+
+## QnA
+
+1. Why are we using useCallback() to fetch data? : [useCallback()](https://reactjs.org/docs/hooks-reference.html#usecallback) returns a memoized callback. This is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders.
